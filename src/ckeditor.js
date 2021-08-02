@@ -30,6 +30,7 @@ import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation';
 import CloudServices from '@ckeditor/ckeditor5-cloud-services/src/cloudservices';
+import Mathematics from 'ckeditor5-math/src/math';
 
 export default class ClassicEditor extends ClassicEditorBase {}
 
@@ -58,7 +59,8 @@ ClassicEditor.builtinPlugins = [
 	PasteFromOffice,
 	Table,
 	TableToolbar,
-	TextTransformation
+	TextTransformation,
+	Mathematics
 ];
 
 // Editor configuration.
@@ -77,20 +79,19 @@ ClassicEditor.defaultConfig = {
 			'indent',
 			'|',
 			'uploadImage',
+			'math',
 			'blockQuote',
 			'insertTable',
 			'mediaEmbed',
 			'undo',
-			'redo'
+			'redo',
 		]
 	},
 	image: {
 		toolbar: [
-			'imageStyle:inline',
-			'imageStyle:block',
+			'imageStyle:full',
 			'imageStyle:side',
 			'|',
-			'toggleImageCaption',
 			'imageTextAlternative'
 		]
 	},
@@ -102,5 +103,16 @@ ClassicEditor.defaultConfig = {
 		]
 	},
 	// This value must be kept in sync with the language defined in webpack.config.js.
-	language: 'en'
+	language: 'en',
+	additionalLanguages: ['id'],
+
+	math: {
+		engine: 'mathjax', // or katex or function. E.g. (equation, element, display) => { ... }
+		lazyLoad: undefined, // async () => { ... }, called once before rendering first equation if engine doesn't exist. After resolving promise, plugin renders equations.
+		outputType: 'script', // or span
+		forceOutputType: false, // forces output to use outputType
+		enablePreview: true, // Enable preview view
+		previewClassName: [], // Class names to add to previews
+		popupClassName: [] // Class names to add to math popup balloon
+	}
 };
