@@ -66,6 +66,7 @@ ClassicEditor.builtinPlugins = [
 
 // Editor configuration.
 ClassicEditor.defaultConfig = {
+    width: 'auto',
     toolbar: {
         items: [
             'heading',
