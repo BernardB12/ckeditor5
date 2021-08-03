@@ -13,12 +13,7 @@ import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold';
 import Italic from '@ckeditor/ckeditor5-basic-styles/src/italic';
 import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline';
 import Strikethrough from '@ckeditor/ckeditor5-basic-styles/src/strikethrough';
-import Code from '@ckeditor/ckeditor5-basic-styles/src/code';
-import Subscript from '@ckeditor/ckeditor5-basic-styles/src/subscript';
-import Superscript from '@ckeditor/ckeditor5-basic-styles/src/superscript';
 import BlockQuote from '@ckeditor/ckeditor5-block-quote/src/blockquote';
-import CKFinder from '@ckeditor/ckeditor5-ckfinder/src/ckfinder';
-import EasyImage from '@ckeditor/ckeditor5-easy-image/src/easyimage';
 import Heading from '@ckeditor/ckeditor5-heading/src/heading';
 import Image from '@ckeditor/ckeditor5-image/src/image';
 import ImageCaption from '@ckeditor/ckeditor5-image/src/imagecaption';
@@ -35,7 +30,6 @@ import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefrom
 import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation';
-import CloudServices from '@ckeditor/ckeditor5-cloud-services/src/cloudservices';
 import Mathematics from 'ckeditor5-math/src/math';
 
 export default class ClassicEditor extends ClassicEditorBase {
@@ -50,13 +44,7 @@ ClassicEditor.builtinPlugins = [
     Italic,
     Underline,
     Strikethrough,
-    Code,
-    Subscript,
-    Superscript,
     BlockQuote,
-    CKFinder,
-    CloudServices,
-    EasyImage,
     Heading,
     Image,
     ImageCaption,
@@ -86,9 +74,6 @@ ClassicEditor.defaultConfig = {
             'italic',
             'underline',
             'strikethrough',
-            'code',
-            'subscript',
-            'superscript',
             'link',
             'bulletedList',
             'numberedList',
