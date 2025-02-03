@@ -32,6 +32,7 @@ import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation';
 import Mathematics from 'ckeditor5-math/src/math';
 import {ImageResize} from "@ckeditor/ckeditor5-image";
+import MathLive from 'ckeditor5-mathlive';
 
 export default class ClassicEditor extends ClassicEditorBase {
 }
@@ -63,7 +64,8 @@ ClassicEditor.builtinPlugins = [
     Table,
     TableToolbar,
     TextTransformation,
-    Mathematics
+    Mathematics,
+    MathLive
 ];
 
 // Editor configuration.
@@ -86,6 +88,7 @@ ClassicEditor.defaultConfig = {
             '|',
             'uploadImage',
             'math',
+            'mathlive',
             'blockQuote',
             'insertTable',
             'mediaEmbed',
