@@ -30,9 +30,7 @@ import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefrom
 import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation';
-import Mathematics from 'ckeditor5-math/src/math';
 import {ImageResize} from "@ckeditor/ckeditor5-image";
-import MathLive from 'ckeditor5-mathlive';
 
 export default class ClassicEditor extends ClassicEditorBase {
 }
@@ -63,9 +61,7 @@ ClassicEditor.builtinPlugins = [
     PasteFromOffice,
     Table,
     TableToolbar,
-    TextTransformation,
-    Mathematics,
-    MathLive
+    TextTransformation
 ];
 
 // Editor configuration.
@@ -87,8 +83,6 @@ ClassicEditor.defaultConfig = {
             'indent',
             '|',
             'uploadImage',
-            'math',
-            'mathlive',
             'blockQuote',
             'insertTable',
             'mediaEmbed',
@@ -115,14 +109,4 @@ ClassicEditor.defaultConfig = {
     // This value must be kept in sync with the language defined in webpack.config.js.
     language: 'en',
     additionalLanguages: ['id'],
-
-    math: {
-        engine: 'mathlive', // or katex or function. E.g. (equation, element, display) => { ... }
-        lazyLoad: true, // async () => { ... }, called once before rendering first equation if engine doesn't exist. After resolving promise, plugin renders equations.
-        outputType: 'latex', // or span
-        forceOutputType: true, // forces output to use outputType
-        enablePreview: true, // Enable preview view
-        previewClassName: ['math-preview'], // Class names to add to previews
-        popupClassName: ['math-popup'] // Class names to add to math popup balloon
-    }
 };
