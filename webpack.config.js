@@ -71,6 +71,29 @@ module.exports = {
 						}
 					}
 				]
+			},
+			{
+				test: /\.js$/,
+				exclude: /node_modules\/(?!@yayure)/,  // Proses hanya node_modules @yayure
+				use: {
+					loader: 'babel-loader',
+					options: {
+						presets: ['@babel/preset-env']
+					}
+				}
+			},
+			{
+				test: /\.(woff|woff2|ttf|eot|otf)$/,
+				use: [
+					{
+						loader: 'file-loader',
+						options: {
+							name: '[name].[ext]',
+							outputPath: 'fonts/' // Folder output untuk font
+						}
+					}
+				],
+				exclude: /node_modules\/(?!mathlive)/
 			}
 		]
 	}

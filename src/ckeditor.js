@@ -31,6 +31,9 @@ import Table from '@ckeditor/ckeditor5-table/src/table';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation';
 import {ImageResize} from "@ckeditor/ckeditor5-image";
+import { Mathlive, MathlivePanelview } from '@yayure/ckeditor5-mathlive';
+import 'mathlive/dist/mathlive-static.css';
+import 'mathlive';
 
 export default class ClassicEditor extends ClassicEditorBase {
 }
@@ -61,7 +64,8 @@ ClassicEditor.builtinPlugins = [
     PasteFromOffice,
     Table,
     TableToolbar,
-    TextTransformation
+    TextTransformation,
+    Mathlive
 ];
 
 // Editor configuration.
@@ -83,6 +87,7 @@ ClassicEditor.defaultConfig = {
             'indent',
             '|',
             'uploadImage',
+            'mathlive',
             'blockQuote',
             'insertTable',
             'mediaEmbed',
@@ -109,4 +114,14 @@ ClassicEditor.defaultConfig = {
     // This value must be kept in sync with the language defined in webpack.config.js.
     language: 'en',
     additionalLanguages: ['id'],
+    mathlive: {
+        renderMathPanel( element ) {
+            let panelView = new MathlivePanelview();
+            panelView.mount( element );
+            return () => {
+                panelView.destroy();
+                panelView = null;
+            }
+        }
+    }
 };
