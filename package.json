@@ -1,7 +1,7 @@
 {
-  "name": "@sokrates/ckeditor5",
+  "name": "@bernardb12/ckeditor5",
   "version": "41.4.0",
-  "description": "The classic editor build of CKEditor 5 – the best browser-based rich text editor.",
+  "description": "The classic editor build of CKEditor 5 combined with mathlive.",
   "keywords": [
     "ckeditor5-build",
     "ckeditor",
